@@ -1,4 +1,4 @@
-baseURL = "https://example.com"
+baseURL = "/"
 
 # theme
 # 主题
@@ -6,6 +6,9 @@ theme = "LoveIt"
 # themes directory
 # 主题目录
 #themesDir = "../.."
+
+relativeURLs = true
+uglyURLs = true
 
 # website title
 # 网站标题
