@@ -7,6 +7,7 @@ theme: PaperMod
 relativeURLs: true
 uglyURLs: true
 paginate: 6
+googleAnalytics: G-6N3PSTJ6RS
 permalinks:
   post: /blog/:year-:month-:day-:title/
 params:
