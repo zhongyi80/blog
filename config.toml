@@ -2,7 +2,7 @@
 baseurl = "/"
 disablePathToLower = false
 languageCode = "en-us"
-title = "Site title"
+title = "Medi xyz"
 theme = "Hugo-Octopress"
 
 # Needed so we can serve the example website without extra switches
@@ -43,7 +43,7 @@ post = "/blog/:year-:month-:day-:title/" # change the post URL to look like the 
   """
   # Sidebar menu - if true will add a sidebar menu between sidebar text and recent posts
   sidebarMenuEnabled = true
-  sidebarMenuHeader = "Sidebar Links"
+  sidebarMenuHeader = "useful links"
 
   # sidebar links
   github = "https://github.com/parsiya/Hugo-Octopress"
@@ -63,7 +63,7 @@ post = "/blog/:year-:month-:day-:title/" # change the post URL to look like the 
   author = "Yi Zhong"
 
   # This text appears in the site header under website title
-  subtitle = "Subtitle appears under the website title"
+  subtitle = "Medical imaing tech"
 
   # Search engine URL
   searchEngineURL = "https://www.google.com/search"
