@@ -1,113 +1,130 @@
-# Site settings
+
 baseurl = "/"
+disablePathToLower = false
 languageCode = "en-us"
-defaultContentLanguage = "en"
-title = "Okkur - Syna"
-theme = "syna"
+title = "Site title"
+theme = "Hugo-Octopress"
+
+# Needed so we can serve the example website without extra switches
 #themesDir = "../.."
-enableGitInfo = true
-version = "0.17.4"
-disableKinds = ["RSS", "taxonomy", "taxonomyTerm"]
-ignorefiles = [ "content/dev/.*" ]
 
-# Google Analytics tracking
-googleAnalytics = ""
+relativeURLs = true
+uglyURLs = true
 
-[outputs]
-  home = ["HTML", "JSON"]
+# Disqus shortcode
+# Disable comments for any individual post by adding "comments: false" in its frontmatter
+# Note it's not under [params] anymore
+# disqusShortname = "Your disqus shortname"
 
-[frontmatter]
-  date = ["date", "lastmod"]
-  lastmod = ["lastmod", ":git", "date"]
+# Number of blog posts in each pagination page
+paginate = 6
 
-[markup]
-  [markup.goldmark]
-    [markup.goldmark.renderer]
-     unsafe = true
+[permalinks]
+post = "/blog/:year-:month-:day-:title/" # change the post URL to look like the old ones
 
 [params]
-  name = "Okkur Labs"
-  description = "Open Source Theme for your next project"
-  debug = true
-  unsafeEvents = true # Default is false. Enables ?event=type format of url events.
 
-  [params.style]
-    #background = "secondary"
+  # --- Start sidebar options ---
+  # Number of last posts that will be displayed in the sidebar - set to 0 or remove to hide this section
+  sidebarRecentLimit = 5
 
-  # Theme customizations
-  # Assets relative to 'static/'
-  [params.custom]
-    favicon = "favicon.ico"
-    favicon_ico_sizes = "16x16 32x32"
-    favicon_png = "favicon.png"
-    favicon_svg = "favicon.svg"
+  # Sidebar header - passed to markdownify so you can write markdown here
+  sidebarHeader = "Sidebar Header"
 
-  # Piwik tracking
-  [params.analytics.piwik]
-    #url = "https://use.example.net"
-    #id = ""
-    #domain = "*" # Track subdomains via "*.example.com"
-    # Optional hash for integrity check
-    #hash = "sha512-RfeD0pacGTqy9m7U6PgehQfS4cc7SIt+e+P+H5e848kEvB/RW84CUGO3O4O3LNbxjevym6KPUZ8muPsMrI8WIw=="
+  # Sidebar text also supports markdown
+  # New lines can be added with two spaces at the end of line. New paragraphs can be added with two an empty line.
+  # when adding two new lines, remember to remove the indentation otherwise the new line will be treated as a codeblock
+  sidebarText = """Here's a [link to example.net](https://www.example.net)
 
-  # Optional, global disable switch for fontawesome related files
-  # For custom fontawesome js files use the custom.js method
-  [params.fontawesome]
-    disabled = false
-    pro = false
+  New paragraph
 
-  [params.colors]
-    primary = "#00838F"
-    secondary = "#868e96"
-    success = "#008f54"
-    info = "#00c9dc"
-    warning = "#fdf314"
-    danger = "#dc1200"
-    light = "#f8f9fa"
-    dark = "#343a40"
+  Another paragraph which has two spaces in the end to create a new line using markdown  
+  New line but not a new paragraph
+  """
+  # Sidebar menu - if true will add a sidebar menu between sidebar text and recent posts
+  sidebarMenuEnabled = true
+  sidebarMenuHeader = "Sidebar Links"
 
-# main/prepend/postpend menus are displayed in nav fragment.
-# footer/footer_social menus are displayed in footer fragment.
-# copyright_footer menus are displayed in copyright fragment
-# Keep an eye out for updates. These will be moved out to make navbar more
-# configurable.
+  # sidebar links
+  github = "https://github.com/parsiya/Hugo-Octopress"
+  bitbucket = "https://bitbucket.org/parsiya/"
+  twitter = "https://twitter.com/cryptogangsta/"
+
+  # --- End sidebar options ---
+
+  # If set to true, navigation menu links will open in a new window with the exception of links to root ("/")
+  # If this item does not exist or set to false, then navigation menu links will open in the same window
+  navigationNewWindow = false
+
+  # If false, all of blog post will appear on front page (and in pagination)
+  truncate = true
+
+  # Author's name (appears in meta tags and under posts)
+  author = "Yi Zhong"
+
+  # This text appears in the site header under website title
+  subtitle = "Subtitle appears under the website title"
+
+  # Search engine URL
+  searchEngineURL = "https://www.google.com/search"
+
+  # Text of the "Continue Reading" label. Supports markdown and inline HTML.
+  # For example, &rarr; == right arrow.
+  continueReadingText = "Would you like to know more? &rarr;"
+
+  # Switch to true to enable RSS icon link
+  rss = true
+
+  # Set to true to use a text label for RSS instead of an icon
+  # This is overwritten by the "rss" setting
+  textrss = false
+
+  # Website's default description
+  description = ""
+
+  # 404.html header and text - both support markdown
+  notFoundHeader = "There's nothing here"
+
+  notFoundText = """Please either go back or use the navigation/sidebar menus.
+  """
+
+  # Set to true to hide ReadingTime on posts
+  disableReadingTime = false
+
+  # Set to true to disable downloading of remote Google fonts
+  disableGoogleFonts = true
+
+  # Generate taxonomy pages
+  generateTaxonomyList = true
+
+# Menu
+# If navigationNewWindow (under [params]) is set to true then all links except root ("/") will open in a new window
+# If it does not exist or is set to false then links will open in the same window
+
 [[menu.main]]
-  url = "/"
-  name = "Home"
-  weight = 10
+  Name = "docs"
+  URL = "/docs"
 
 [[menu.main]]
-  url = "/fragments"
-  name = "Fragments"
-  weight = 20
+  Name = "post"
+  URL = "/post"
 
-[[menu.main]]
-  url = "/docs"
-  name = "Docs"
-  weight = 30
+# Sidebar menus
+# Enable with "sidebarMenuEnabled = true" under [params]
+# Header text is "sidebarMenuHeader" under [params]
+[[menu.sidebar]]
+  Name = "example.net"
+  URL = "https://www.example.net"
+  weight = 0
 
-[[menu.main]]
-  url = "/about"
-  name = "About"
-  weight = 40
+[[menu.sidebar]]
+  Name = "This theme on Github"
+  URL = "https://www.github.com/parsiya/hugo-octopress"
+  weight = 1
 
-[[menu.footer]]
-  url = "https://syna.okkur.org/demo"
-  name = "Getting Started"
-  weight = 10
-
-[[menu.footer]]
-  url = "https://about.okkur.org/"
-  name = "About Okkur Labs"
-  weight = 20
-
-[[menu.footer_social]]
-  weight = 30
-  name = "github"
-  url = "https://git.okkur.org/syna"
-  pre = "fab fa-github fa-stack-2x"
-
-[[menu.copyright_footer]]
-  url = "/about"
-  name = "About Us"
-  weight = 10
+[markup]
+  [markup.tableOfContents]
+    endLevel = 8
+    startLevel = 1
+  [markup.highlight]
+    style = "solarized-dark"
