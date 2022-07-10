@@ -1,9 +1,8 @@
 ---
 title: "Medical Image Coordination"
-date: 2022-07-10T00:25:59-04:00
+date: 2022-07-10
 draft: false
-toc: false
-comments: false
+comments: true
 categories:
 - Medical Imaging
 - category2

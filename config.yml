@@ -2,7 +2,8 @@ baseurl: /
 disablePathToLower: false
 languageCode: en-us
 title: Medi xyz
-theme: Hugo-Octopress
+#theme: Hugo-Octopress
+theme: PaperMod
 relativeURLs: true
 uglyURLs: true
 paginate: 6
@@ -47,7 +48,9 @@ params:
 menu:
   main:
     - Name: post
-      URL: /post
+      URL: /post/
+    - Name: categories
+      URL: /
   sidebar:
     - Name: example.net
       URL: https://www.example.net
