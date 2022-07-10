@@ -1,0 +1,63 @@
+baseurl: /
+disablePathToLower: false
+languageCode: en-us
+title: Medi xyz
+theme: Hugo-Octopress
+relativeURLs: true
+uglyURLs: true
+paginate: 6
+permalinks:
+  post: /blog/:year-:month-:day-:title/
+params:
+  sidebarRecentLimit: 5
+  sidebarHeader: Sidebar Header
+  sidebarText: "Here's a [link to example.net](https://www.example.net)
+
+
+    \  New paragraph
+
+
+    \  Another paragraph which has two spaces in the end to create a new
+    line using markdown \
+
+    \  New line but not a new paragraph
+
+    \  "
+  sidebarMenuEnabled: true
+  sidebarMenuHeader: useful links
+  github: https://github.com/parsiya/Hugo-Octopress
+  bitbucket: https://bitbucket.org/parsiya/
+  twitter: https://twitter.com/cryptogangsta/
+  navigationNewWindow: false
+  truncate: true
+  author: Yi Zhong
+  subtitle: Medical imaing tech
+  searchEngineURL: https://www.google.com/search
+  continueReadingText: Would you like to know more? &rarr;
+  rss: true
+  textrss: false
+  description: ""
+  notFoundHeader: There's nothing here
+  notFoundText: "Please either go back or use the navigation/sidebar menus.
+
+    \  "
+  disableReadingTime: false
+  disableGoogleFonts: true
+  generateTaxonomyList: true
+menu:
+  main:
+    - Name: post
+      URL: /post
+  sidebar:
+    - Name: example.net
+      URL: https://www.example.net
+      weight: 0
+    - Name: This theme on Github
+      URL: https://www.github.com/parsiya/hugo-octopress
+      weight: 1
+markup:
+  tableOfContents:
+    endLevel: 8
+    startLevel: 1
+  highlight:
+    style: solarized-dark
